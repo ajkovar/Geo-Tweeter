@@ -1,0 +1,21 @@
+{
+   "geonames":[
+      {
+         "countryName":"Cameroon",
+         "adminCode1":"12",
+         "fclName":"city, village,...",
+         "countryCode":"CM",
+         "lng":15.007063,
+         "fcodeName":"populated place",
+         "distance":"0.8154",
+         "fcl":"P",
+         "name":"Lara",
+         "fcode":"PPL",
+         "geonameId":6861029,
+         "lat":9.997677,
+         "population":0,
+         "adminName1":"Extreme-Nord"
+      }
+   ]
+}
+
