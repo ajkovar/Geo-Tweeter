@@ -1,13 +1,13 @@
 
-= YourLib
+= Geo Tweeter
 
-Description
+Experimentation with several things including twitter API, reverse geocoding, jspec, and localStorage
 
 == License 
 
 (The MIT License)
 
-Copyright (c) 2009 Your Name <Your Email>
+Copyright (c) 2009 Alex Kovar <ajkovar@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
