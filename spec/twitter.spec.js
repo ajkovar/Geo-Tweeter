@@ -7,7 +7,7 @@ describe 'z.twitter'
 
 		mock_request().and_return(fixture('twitter.json'));
 		
-		aggregator = new z.twitter.TweetAggregator();
+		aggregator = new z.twitter.TweetAggregator("pie");
 	end
 
   	describe 'search()'
@@ -48,7 +48,7 @@ describe 'z.twitter'
   
 	describe 'filterNonGeocodes()'
 		it "should filter out tweets that don't have geocodes"
-			aggregator.search("pie", 3, function(tweets){
+			aggregator.search(3, function(tweets){
 				z.twitter.filterNonGeocodes(tweets).length.should.equal 2
 			});
 		end
@@ -60,28 +60,31 @@ describe 'z.twitter'
 	  
 			it 'should make calls to twitter service for tweets'
 				z.twitter.should.receive('search', 'once')
-				aggregator.search("pie", 3, function(){});
+				aggregator.search(3, function(){});
 			end
 			
 			it 'should add tweets to internal storage'
 				aggregator.tweets = [];
-				aggregator.search("pie", 3, function(){});
+				aggregator.search(3, function(){});
 				aggregator.tweets.length.should.equal 3
 			end
 			
 			it 'should not add duplicate tweets'
+				//aggregator.tweets.length.should.equal 3
+				aggregator.search(3, function(){});
 				aggregator.tweets.length.should.equal 3
-				aggregator.search("pie", 3, function(){});
+				aggregator.search(3, function(){});
 				aggregator.tweets.length.should.equal 3
 			end
 			
-			it 'should retrieve from and update to local storage'
+			/*it 'should retrieve from and update to local storage'
+				var searchTerm = "pie";
 				z.storage.setLocal("tweets", []);
-				aggregator = new z.twitter.TweetAggregator();
-				aggregator.tweets.length.should.equal z.storage.getLocal("tweets").length
-				aggregator.search("pie", 3, function(){});
-				aggregator.tweets.length.should.equal z.storage.getLocal("tweets").length
-			end
+				aggregator = new z.twitter.TweetAggregator(searchTerm);
+				aggregator.tweets.length.should.equal z.storage.getLocal("tweets")[searchTerm].length
+				aggregator.search(3, function(){});
+				aggregator.tweets.length.should.equal z.storage.getLocal("tweets")[searchTerm].length
+			end*/
 		
 		end
 		
