@@ -3,7 +3,7 @@
       {
          "text":"geo",
          "to_user_id":396524,
-         "geo":{coordinates:[1, 2], type:"Point"},
+         "geo":{"coordinates":[1, 2], "type":"Point"},
          "to_user":"TwitterAPI",
          "from_user":"jkoum",
          "id":1478555574,
@@ -16,7 +16,7 @@
          "to_user_id":396524,
          "to_user":"TwitterAPI",
          "from_user":"jkoum",
-         "id":1478555574,
+         "id":1478555575,
          "from_user_id":1833773,
          "iso_language_code":"nl",
          "created_at":"Wed, 08 Apr 2009 19:22:10 +0000"
@@ -24,10 +24,10 @@
        {
          "text":"geo",
          "to_user_id":396524,
-         "geo":{coordinates:[5, 8], type:"Point"},
+         "geo":{"coordinates":[5, 8], "type":"Point"},
          "to_user":"TwitterAPI",
          "from_user":"jkoum",
-         "id":1478555574,
+         "id":1478555576,
          "from_user_id":1833773,
          "iso_language_code":"nl",
          "created_at":"Wed, 08 Apr 2009 19:22:10 +0000"
