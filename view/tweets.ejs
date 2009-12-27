@@ -1,0 +1,9 @@
+<ol class="tweetList">
+<% for(var i=0; i<tweets.length; i++) {%>
+   <li class="results"><%= tweets[i].from_user %> 
+   from 
+   <%= tweets[i].geonames ? tweets[i].geonames[0].name : "unknown" %>, 
+   <%= tweets[i].geonames ? tweets[i].geonames[0].countryName : "unknown" %> 
+   sez: "<%= tweets[i].text %>"</li>
+<% } %>
+</ol>
