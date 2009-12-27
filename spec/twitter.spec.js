@@ -59,8 +59,28 @@ describe 'z.twitter'
 		describe 'search()'
 	  
 			it 'should make calls to twitter service for tweets'
-				$.should.receive('getJSON', 'once')
+				z.twitter.should.receive('search', 'once')
 				aggregator.search("pie", 3, function(){});
+			end
+			
+			it 'should add tweets to internal storage'
+				aggregator.tweets = [];
+				aggregator.search("pie", 3, function(){});
+				aggregator.tweets.length.should.equal 3
+			end
+			
+			it 'should not add duplicate tweets'
+				aggregator.tweets.length.should.equal 3
+				aggregator.search("pie", 3, function(){});
+				aggregator.tweets.length.should.equal 3
+			end
+			
+			it 'should retrieve from and update to local storage'
+				z.storage.setLocal("tweets", []);
+				aggregator = new z.twitter.TweetAggregator();
+				aggregator.tweets.length.should.equal z.storage.getLocal("tweets").length
+				aggregator.search("pie", 3, function(){});
+				aggregator.tweets.length.should.equal z.storage.getLocal("tweets").length
 			end
 		
 		end
